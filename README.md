@@ -20,21 +20,26 @@
 | Feature | Description |
 |---|---|
 | 🌐 **Generals Online** | Launch directly into Generals Online multiplayer |
-| 🖥️ **Windowed Mode** | Run the game in a window with GenTool auto-enable |
-| 🔧 **GenTool Manager** | Enable, disable, or auto-download GenTool |
-| 🎨 **DXWrapper Support** | Fix black screen issues or reduce GPU load |
-| 🔍 **Auto Game Detection** | Finds your game automatically (Registry, Steam, common paths) |
-| 🌙 **Dark / Light Theme** | Follows system theme or manual override |
-| 🌐 **Arabic / English UI** | Full bilingual interface support |
+| 🖥️ **Windowed Mode** | Run the game in a resizable window with auto GenTool activation |
+| 🔧 **GenTool Manager** | Enable, disable, remove, or auto-download GenTool v8.9 |
+| 🎨 **DXWrapper Support** | Fix black screen issues or reduce GPU load — two variants available |
+| 🔍 **Smart Auto Detection** | Finds your game via Registry → Steam → Common Paths → Deep Scan |
+| 🌙 **Dark / Light Theme** | Military Tactical dark theme + Desert Command light theme, or follow system |
+| 🌐 **Arabic / English UI** | Full bilingual interface — switch at any time from inside the launcher |
 | ⚡ **Admin Auto-Elevate** | Automatically requests admin rights on launch |
-| 🔽 **System Tray Menu** | Run in background, toggle mods, and wake-up instantly |
-| 🛡️ **Robust Download Checks** | Verifies file sizes and extraction integrity |
+| 🔽 **System Tray Support** | Run in background, toggle tools, and restore window from tray |
+| 📥 **Download Progress UI** | Real-time download progress window with percentage tracking |
+| 🛡️ **File Integrity Checks** | Verifies file sizes and extraction success before applying changes |
+| 🎖️ **Module Status Panel** | Live status cards for GenTool and DXWrapper (LOADED / STANDBY) |
 
 ---
 
 ## 📸 Preview
 
-> The launcher features a professional dark UI inspired by GitHub/Discord aesthetics, with a clean header, status bar, launch buttons, and tool controls.
+> The launcher features a professional military-tactical dark UI with a cinematic header, path banner, launch operation buttons, field tools section, and a live module status panel on the right.
+
+**Dark Theme** — Military Tactical (deep olive/green palette)  
+**Light Theme** — Desert Command (warm sand/khaki palette)
 
 ---
 
@@ -55,24 +60,39 @@
 
 ---
 
+## 🎮 Launch Modes
+
+### 🌐 Generals Online
+Launches `GeneralsOnlineZH.exe` for online multiplayer. GenTool is automatically **disabled** before launch to ensure compatibility.
+
+### 🖥️ Windowed Mode
+Launches `Generals.exe -win` for offline skirmish or campaign. GenTool is **automatically enabled** (and downloaded if missing). Also launches `EdgeScroller.exe` if present.
+
+---
+
 ## 🔧 Tools
 
 ### GenTool
-GenTool adds extra features to Zero Hour, required for **Windowed Mode**.
+Adds extra features to Zero Hour — required for Windowed Mode.
 
-- **Enable** — Activates `d3d8.dll` in the game folder
-- **Disable** — Deactivates GenTool without deleting it
-- **Download** — Auto-downloads and installs GenTool v8.9 from ReizanTech GitHub releases
+| Action | Description |
+|---|---|
+| **Enable** | Activates `d3d8.dll` in the game folder (renames `d3d8-.dll` → `d3d8.dll`) |
+| **Disable** | Deactivates GenTool without deleting it (renames `d3d8.dll` → `d3d8-.dll`) |
+| **Remove** | Permanently deletes both `d3d8.dll` and `d3d8-.dll` |
+| **↓ Get** | Auto-downloads and installs GenTool v8.9 from ReizanTech GitHub |
 
 ### DXWrapper
-Fixes display issues, especially on modern GPUs.
+Fixes display issues on modern GPUs. Two variants available:
 
-| Version | Use Case |
+| Variant | Use Case |
 |---|---|
-| 🎮 GPU Fix Black Screen | Fixes black screen on launch with modern graphics cards |
-| ⚡ Reduce Settings | Lowers GPU load for better performance |
+| 🎮 **GPU Fix — Black Screen** | Fixes black screen on launch with modern graphics cards |
+| ⚡ **Reduce Settings** | Lowers GPU load for better performance |
 
-> ⚠️ DXWrapper only works with **Generals Online**, not the base `Generals.exe`
+> ⚠️ DXWrapper only works with **Generals Online** (`GeneralsOnlineZH.exe`), not the base `Generals.exe`
+
+The launcher automatically detects which variant is installed by checking `dxwrapper.ini` file size and displays the correct type in the status panel.
 
 ---
 
@@ -93,17 +113,41 @@ FirstRun=0
 | `GamePath` | folder path | Path to game directory containing `Generals.exe` |
 | `Language` | `en` / `ar` | UI language |
 | `Theme` | `auto` / `dark` / `light` | UI color theme |
+| `FirstRun` | `0` / `1` | Whether this is the first launch |
 
 ---
 
 ## 🗂️ Game Search Priority
 
-The launcher searches for your game in this order:
+The launcher searches for your game automatically in this order:
 
-1. **Windows Registry** — Checks EA/Origin install entries
-2. **Steam** — Scans Steam library folders
-3. **Common Paths** — Checks typical install locations (Program Files, etc.)
-4. **Deep Search** — Recursively scans all drives (up to 3 levels deep)
+1. **Windows Registry** — Checks EA / Origin install entries across multiple registry paths
+2. **Steam** — Scans Steam library folders (auto-detected via registry or common paths)
+3. **Common Paths** — Checks typical install locations (Program Files, Origin Games, R.G. Mechanics, etc.)
+4. **Deep Search** — Recursively scans all drives up to 3 levels deep, skipping system/irrelevant folders
+
+---
+
+## 🎨 Theme System
+
+| Theme | Description |
+|---|---|
+| 🔄 **Auto** | Follows Windows system dark/light mode setting |
+| 🌙 **Dark** | Military Tactical — deep olive/green palette inspired by tactical HUDs |
+| ☀️ **Light** | Desert Command — warm sand/khaki palette with army green accents |
+
+Switch themes instantly from the language/theme controls inside the launcher. The theme is applied to the title bar, all controls, and dialogs.
+
+---
+
+## 🖥️ System Tray
+
+The launcher minimizes to the system tray instead of closing. From the tray icon you can:
+
+- **Double-click** to restore the main window
+- Toggle **GenTool** on/off
+- Toggle **DXWrapper** on/off
+- Exit the application
 
 ---
 
