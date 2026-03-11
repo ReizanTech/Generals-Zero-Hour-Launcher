@@ -53,16 +53,43 @@
 
 ### Requirements
 - Windows 10 / 11
-- [AutoHotkey v2.0+](https://www.autohotkey.com/)
 - Command & Conquer Generals: Zero Hour (installed)
 
-### Installation
+---
 
-1. Download the latest release from the [Releases page](../../releases)
-2. Extract the ZIP to any folder
-3. Run `GeneralsLauncher.ahk` (requires AutoHotkey v2) **or** run the compiled `.exe`
+### ▶️ Option 1 — Run the EXE (Recommended)
 
-> The launcher will automatically search for your game installation. If not found, it will prompt you to select the folder manually.
+No extra software needed. Just download and run.
+
+1. Go to the [Releases page](../../releases)
+2. Download `GeneralsLauncher.exe`
+3. Run it directly — no installation required
+
+---
+
+### 🔧 Option 2 — Run from Source (AutoHotkey)
+
+If you prefer to run the script directly:
+
+1. Install [AutoHotkey v2.0+](https://www.autohotkey.com/)
+2. Download or clone this repository
+3. Double-click `GeneralsLauncher.ahk` to run it
+
+---
+
+### 📦 Option 3 — Compile AHK to EXE yourself
+
+If you want to build your own `.exe` from the source script:
+
+1. Install [AutoHotkey v2.0+](https://www.autohotkey.com/)
+2. Open the **AutoHotkey Dash** (comes with AutoHotkey)
+3. Click **Compile** → Open Ahk2Exe
+4. Set `GeneralsLauncher.ahk` as the source file
+5. Click **Convert** — your `.exe` will be generated
+
+---
+
+> The launcher will automatically search for your game installation on first run. If not found, it will prompt you to select the folder manually.
 
 ---
 
