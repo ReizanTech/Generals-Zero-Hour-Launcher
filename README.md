@@ -36,6 +36,12 @@
 
 ## 📸 Preview
 
+<div align="center">
+
+![C&C Generals Zero Hour Launcher Preview](screenshot.png)
+
+</div>
+
 > The launcher features a professional military-tactical dark UI with a cinematic header, path banner, launch operation buttons, field tools section, and a live module status panel on the right.
 
 **Dark Theme** — Military Tactical (deep olive/green palette)  
